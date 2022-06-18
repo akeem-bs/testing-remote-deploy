@@ -20,5 +20,5 @@ jobs:
       - name: Commit new branch to maven repository
         run: git push maven-repo testing:commons-service
         env: 
-          token: '${{ secrets.ACCESSS_TOKEN_PACKAGES }}'
+          token: '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'
           ACCESS_TOKEN: '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'
