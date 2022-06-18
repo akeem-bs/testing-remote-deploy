@@ -18,5 +18,5 @@ jobs:
         run: git remote add maven-repo https://github.com/blusalt-fs/maven-repository
       - name: Commit new branch to maven repository
         run: git push maven-repo akeem-bs-patch-3:commons-service
-        env:
+        env: 
           token: ${{ secrets.ACCESSS_TOKEN_PACKAGES }}
