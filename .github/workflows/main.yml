@@ -17,16 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: create a new maven-repository
-        run: git remote add maven-repo https://github.com/blusalt-fs/maven-repository
+        run: git remote add maven-repo git@github.com/blusalt-fs/maven-repository
       - name: Install SSH key
       - uses: shimataro/ssh-key-action@v2
         with:
          key: ${{ secrets.SSH_PRIVATE_KEY }}
-         name: id_rsa # optional
          known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: Commit new branch to maven repository
         run: git push maven-repo testing:commons-service
-        env: 
-          token: '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'
-          ACCESS_TOKEN: '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'
-          GITHUB_TOKEN: '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'
