@@ -16,6 +16,8 @@ jobs:
       repository-projects: write
     steps:
       - uses: actions/checkout@v3
+      - name: remove git root
+        run: sudo rm -rf .git && git init 
       - name: create a new maven-repository
         run: git remote add maven-repo git@github.com:blusalt-fs/maven-repository.git
       - name: Install SSH key
@@ -24,4 +26,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: Commit new branch to maven repository
-        run: git push maven-repo testing:commons-service
+        run: git branch -M commons-service && git add . && git commit -m "from remote repo in need of packages" && git push maven-repo commons-service
