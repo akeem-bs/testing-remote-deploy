@@ -25,5 +25,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: initiate commit config
+        run:  git config --global user.email "git-action@blusalt.net" && git config --global user.name "Git Bot Action"
       - name: Commit new branch to maven repository
         run: git branch -M commons-service && git add . && git commit -m "from remote repo in need of packages" && git push maven-repo commons-service
