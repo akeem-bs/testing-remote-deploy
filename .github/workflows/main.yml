@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: create a new maven-repository
-        run: git remote add maven-repo git@github.com/blusalt-fs/maven-repository
+        run: git remote add maven-repo git@github.com:blusalt-fs/maven-repository.git
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
