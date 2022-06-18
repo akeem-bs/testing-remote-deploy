@@ -19,7 +19,7 @@ jobs:
       - name: create a new maven-repository
         run: git remote add maven-repo git@github.com/blusalt-fs/maven-repository
       - name: Install SSH key
-      - uses: shimataro/ssh-key-action@v2
+        uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
