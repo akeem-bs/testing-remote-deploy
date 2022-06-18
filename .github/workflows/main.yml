@@ -17,6 +17,6 @@ jobs:
       - name: Commit new branch to maven repository
         run: git push maven-repo testing:commons-service
         env: 
-          token: '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'
-          ACCESS_TOKEN: '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'
-          GITHUB_TOKEN: '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'
+          token: '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'
+          ACCESS_TOKEN: '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'
+          GITHUB_TOKEN: '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'
