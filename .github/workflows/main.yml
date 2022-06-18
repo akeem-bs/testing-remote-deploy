@@ -10,10 +10,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      repository-projects: write
     steps:
       - uses: actions/checkout@v3
       - name: create a new maven-repository
